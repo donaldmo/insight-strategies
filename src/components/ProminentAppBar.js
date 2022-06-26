@@ -88,7 +88,7 @@ export default function ProminentAppBar({title}) {
             }}>Seller account</MenuItem>
 
             <MenuItem onClick={() => {
-              return window.location.href = '/insight-strategies?page=dashbord&title=Sales Analitics'
+              return window.location.href = '/insight-strategies?page=dashbord&title=Sales Analytics'
             }}>Dashboard</MenuItem>
           </Menu>
         </Toolbar>
