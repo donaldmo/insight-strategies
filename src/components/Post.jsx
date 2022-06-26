@@ -42,7 +42,7 @@ const Post = ({ img, title }) => {
           Share
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          Buy
         </Button>
       </CardActions>
     </Card>

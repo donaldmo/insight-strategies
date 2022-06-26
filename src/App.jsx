@@ -7,6 +7,8 @@ import ProminentAppBar from "./components/ProminentAppBar";
 import Rightbar from "./components/Rightbar";
 import AccountPage from "./pages/account/AccountPage";
 
+import Dashboard from "./pages/dashboard/Dashboard";
+
   const useStyles = makeStyles((theme) => ({
     middle: {
       justifyContent: 'center'
@@ -24,16 +26,35 @@ import AccountPage from "./pages/account/AccountPage";
   }));
 
 const App = () => {
+  const queryParams = new URLSearchParams(window.location.search)
+  const page = queryParams.get("page")
+  const title = queryParams.get("title")
 
   const classes = useStyles();
 
+  const renderPage = () => {
+    console.log(page)
+
+    switch (page) {
+      case 'profile':
+        return <AccountPage/>
+
+      case 'dashbord':
+        return <Dashboard />
+    
+      default:
+        return <Feed/>
+        break;
+    }
+  }
+
   return (
     <div>
-      <ProminentAppBar />
+      <ProminentAppBar title={title}/>
       <Grid container>
         <Grid item sm={12} xs={12} className={classes.middle}>
           {/* <Feed /> */}
-          <AccountPage />
+          {renderPage(page)}
         </Grid>
       </Grid>
       <Add />

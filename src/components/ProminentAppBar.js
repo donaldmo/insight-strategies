@@ -31,8 +31,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ProminentAppBar() {
+export default function ProminentAppBar({title}) {
   const classes = useStyles();
+  console.log(title)
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -44,6 +45,7 @@ export default function ProminentAppBar() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
 
   return (
     <div className={classes.root}>
@@ -58,7 +60,7 @@ export default function ProminentAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography className={classes.title} variant="h5" noWrap>
-            Seller Account
+            {title || 'Seller Account'}
           </Typography>
           <IconButton aria-label="search" color="inherit">
             <SearchIcon />
@@ -77,9 +79,17 @@ export default function ProminentAppBar() {
             onClose={handleClose}
             TransitionComponent={Fade}
           >
-            <MenuItem onClick={handleClose}>Profile</MenuItem>
-            <MenuItem onClick={handleClose}>Seller account</MenuItem>
-            <MenuItem onClick={handleClose}>Logout</MenuItem>
+            <MenuItem onClick={() => {
+              return window.location.href = '/insight-strategies?page=profile&title=User Profle'
+            }}>Profile</MenuItem>
+
+            <MenuItem onClick={() => {
+              return window.location.href = '/insight-strategies'
+            }}>Seller account</MenuItem>
+
+            <MenuItem onClick={() => {
+              return window.location.href = '/insight-strategies?page=dashbord&title=Sales Analitics'
+            }}>Dashboard</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>

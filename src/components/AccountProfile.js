@@ -10,7 +10,7 @@ import {
 } from '@material-ui/core/';
 
 const user = {
-  avatar: '/assets/images/avarter.jpg',
+  avatar: 'https://scontent-jnb1-1.xx.fbcdn.net/v/t1.6435-9/195248350_5621027371272921_5114037717265549872_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=730e14&_nc_ohc=peagORG2kDsAX_WArYI&_nc_ht=scontent-jnb1-1.xx&oh=00_AT-7PMu1YmxZ1afmD7Aiy2tuyxaVUXvfisXHT7HYxJushQ&oe=62DD8AB9',
   city: 'Thembisa',
   country: 'Gauteng',
   jobTitle: 'Senior Developer',
